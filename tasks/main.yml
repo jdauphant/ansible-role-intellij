@@ -25,7 +25,7 @@
   tags: ["packages","intellij"]
 
 - name: Retreive intellij dir name
-  command: ls -tC {{intellij_install_dir}}
+  command: ls -t {{intellij_install_dir}}
   register: result_intellij_folder_name
   tags: ["configuration","intellij"]
 
