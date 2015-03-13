@@ -71,9 +71,9 @@ galaxy_info:
   #  - 11SP1
   #  - 11SP2
   #  - 11SP3
-  #- name: GenericLinux
-  #  versions:
-  #  - all
+   - name: GenericLinux
+     versions:
+     - all
   #  - any
   #- name: Debian
   #  versions:
@@ -94,7 +94,7 @@ galaxy_info:
   #- database
   #- database:nosql
   #- database:sql
-  #- development
+   - development
   #- monitoring
   #- networking
   #- packaging
