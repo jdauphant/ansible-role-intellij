@@ -6,6 +6,21 @@
     - unzip
   tags: ["packages","intellij"]
 
+- name: Find latest version
+  uri:
+    url: "https://data.services.jetbrains.com/products/releases?code=IIU%2CIIC&latest=true&type=release"
+    return_content: yes
+    validate_certs: no
+    body_format: json
+  register: intellij_releases_response
+  when: intellij_version == 'latest'
+  tags: ["packages","intellij"]
+
+- set_fact:
+    intellij_version: "{{ intellij_releases_response.json.IIC.0.version }}"
+  when: intellij_version == 'latest'
+  tags: ["packages","intellij"]
+
 - name: Download intellij
   get_url: url={{intellij_url}} dest={{intellij_tmp}}
   tags: ["packages","intellij"]
